@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>TAREA CLASE 4 15-12-21</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="jumbotron mt-3">
+            <h1 class="text-center">CUMPLE O NO CONDICION</h1>
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-group"><p>
+                        <label for="n1">Valor</label>
+                        <input id="n1" 
+                        type="number" 
+                        name="n1" 
+                        class="form-control" 
+                        placeholder="ingrese valor aqui">
+                        <br>
+                        <button class="btn btn-block btn-primary mt-3" 
+                        onclick="evaluar();">evaluar </button> <br>
+                        ESTADO
+                        <input class="form-control" id="res" name="res" type="text"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>  
+    <script type="text/javascript">
+
+        function evaluar() {
+            let n1 = document.getElementById('n1').value;
+            let nn1 = parseInt(n1, 10);
+
+            if ((nn1 > 10) || (nn1 < 2)) {
+                document.getElementById('res').value = 'cumple condición';
+            } 
+            else {
+                document.getElementById('res').value = 'no cumple condición';
+            }
+        }
+
+    </script>
+</body>
+</html>
