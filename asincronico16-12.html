@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Multisumar</title>
+</head>
+
+<body>
+    <div class="container-fluid h-100">
+        <div class="text-center d-flex justify-content-center align-items-center h-100">
+            <div class="text-center mt-5 mx-5">
+                <div class="title">
+                    <h1>MULTIPLICACIÓN POR SUMAS SUCESIVAS</h1>
+                </div>
+                <div class="form-group">
+                    <label for="numero1">Primer Elemento:</label> 
+                    <input type="number" class="form-control" name="numero1" id="numero1">
+                </div>
+                <div class="form-group">
+                    <label for="numero2">Segundo Elemento:</label>
+                    <input type="number" class="form-control" name="numero2" id="numero2"></p>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary" onclick="multiplicar();">
+                        Multiplicar
+                    </button>
+                </div>
+                <div class="text-center mt-4">
+                    <h2>
+                        <br>
+                        <p id="resp"></p>
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+
+        // MULTIPLICACIÓN POR SUMAS SUCESIVAS
+        function multiplicar() {
+            // obtener datos
+            let value1 = document.getElementById("numero1").value;
+            let value2 = document.getElementById("numero2").value;
+            
+            // transformación de datos a enteros
+            let i1 = parseInt(value1, 10);
+            let i2 = parseInt(value2, 10);
+            
+            // se valida que las variables tengan un valor
+            if(isEmpty(value1) || isEmpty(value2)) {
+                document.getElementById('resp').innerHTML = "por favor ingrese los valores en las casillas";
+            }else{
+                let producto = 0;
+                let c;
+                // se calcula el resulta con sumas acumulativas
+                // el iterador (c) comienza en 1 y va a iterar en +1 hasta que el iterador sea menor o igual al valor de i1
+                for (c = 1; c <= i1; c++) {
+                    // se acumula la suma
+                    producto = producto + i2;
+                    // producto += i2;
+                }
+                // se muestra el resultado en el elemento con id resp
+                document.getElementById('resp').innerHTML = i1 + " X " + i2 + " = " + producto;
+            }
+            
+            // valida si el campo de entrada está vacio o no
+            function isEmpty(str) {
+                return !str.trim().length;
+            }
+
+        }
+    </script>
+</body>
+
+</html>
